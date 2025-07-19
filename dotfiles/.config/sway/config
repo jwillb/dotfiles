@@ -13,6 +13,9 @@ input type:touchpad {
   accel_profile adaptive
   pointer_accel 0
   tap enabled
+  dwt disabled
+  dwtp disabled
+  events enabled
 }
 
 output eDP-1 max_render_time off allow_tearing false adaptive_sync on mode 1920x1080@60Hz enable
