@@ -1,6 +1,7 @@
 .bashrc
 .bash_profile
 .config/i3/base.conf
+.config/i3status/config
 .config/sway/config
 .config/wm/universal.conf
 .config/nvim/init.vim
