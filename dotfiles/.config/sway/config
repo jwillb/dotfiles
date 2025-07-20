@@ -104,6 +104,21 @@ bindsym $mod+shift+x exec swaylock --color 202020
 bindsym $mod+Control+h move workspace to output left
 bindsym $mod+Control+l move workspace to output right
 
+### WINDOW/OUTPUT ###
+# set theme since lxappearance doesn't fully set it in wayland
+exec_always gsettings set org.gnome.desktop.interface gtk-theme "Colloid-Grey-Dark"
+
+# indicate if a window is using xwayland
+for_window [shell="xwayland"] title_format "%title (X11)"
+
+# set inactive transparency
+exec /usr/share/sway-contrib/inactive-windows-transparency.py -f 1.0 -o 0.95 -g
+
+# set terminal to have no title
+#for_window [app_id="foot"] default_border none
+default_border none
+default_floating_border none
+
 ### MY STARTUP COMMANDS ###
 # start terminal
 exec_always $term
@@ -113,17 +128,3 @@ exec_always swaybg --image $background --mode fill
 
 # set night light screen tint REPLACE
 exec gammastep -l  53.631611:-113.323975 -t 6500K:4500K -b 1.0:0.8
-
-### WINDOW/OUTPUT ###
-# set theme since lxappearance doesn't fully set it in wayland
-exec_always gsettings set org.gnome.desktop.interface gtk-theme "Colloid-Grey-Dark"
-
-# indicate if a window is using xwayland
-for_window [shell="xwayland"] title_format "%title (X11)"
-
-# set inactive transparency
-exec /usr/share/sway-contrib/inactive-windows-transparency.py -f 1.0 -o 0.9
-
-# set terminal to have no title
-for_window [app_id="foot"] default_border none
-
