@@ -1,5 +1,6 @@
 .bashrc
 .bash_profile
+.config/foot/foot.ini
 .config/i3/base.conf
 .config/i3status/config
 .config/sway/config
