@@ -24,7 +24,7 @@ PROMPT_COMMAND='
     PS1_branch="($branch)"
   fi
 '
-PS1='\[\e]0;\w\a\]\[\e[38;5;245m\]\w\[\e[0m\]\[\e[38;5;111m\]${PS1_branch:+ $PS1_branch}\[\e[0m\] \[\e[38;5;49m\]\\$\[\e[0m\] '
+PS1=' \[\e]0;\w\a\]\[\e[38;5;245m\]\w\[\e[0m\]\[\e[38;5;111m\]${PS1_branch:+ $PS1_branch}\[\e[0m\] \[\e[38;5;49m\]\\$\[\e[0m\] '
 
 
 dock_i3() {

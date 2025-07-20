@@ -121,6 +121,9 @@ exec_always gsettings set org.gnome.desktop.interface gtk-theme "Colloid-Grey-Da
 # indicate if a window is using xwayland
 for_window [shell="xwayland"] title_format "%title (X11)"
 
-# set terminal transparency
-for_window [app_id="foot"] opacity 0.9
+# set inactive transparency
+exec /usr/share/sway-contrib/inactive-windows-transparency.py -f 1.0 -o 0.9
+
+# set terminal to have no title
+for_window [app_id="foot"] default_border none
 
