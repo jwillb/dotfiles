@@ -17,18 +17,36 @@ alias yay="paru"
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
-#xhost +
+PROMPT_COMMAND='
+  PS1_branch=""
+  branch=$(git branch --show-current 2>/dev/null)
+  if [ -n "$branch" ]; then
+    PS1_branch="($branch)"
+  fi
+'
+PS1='\[\e[38;5;253m\]\w\[\e[0m\]\[\e[38;5;111m\]${PS1_branch:+ $PS1_branch}\[\e[0m\] \[\e[38;5;49m\]\\$\[\e[0m\] '
 
-#if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 2 ]; then
-#    dbus-run-session sway
-#fi
 
-dock_pc() {
+dock_i3() {
   autorandr --change docked-vert
   nmcli r wifi off
 }
 
-undock_pc() {
+undock_i3() {
   nmcli r wifi on
   autorandr --change mobile
+}
+
+dock_sway() {
+  sway output DP-2 enable
+  sway output DP-3 enable
+  sway output eDP-1 disable
+  nmcli r wifi off
+}
+
+undock_sway() {
+  sway output DP-2 disable
+  sway output DP-3 disable
+  sway output eDP-1 enable
+  nmcli r wifi on
 }
