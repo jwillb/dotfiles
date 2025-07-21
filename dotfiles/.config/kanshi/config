@@ -19,7 +19,6 @@ profile {
   output $LAPTOP disable
   output $LG_MONITOR enable
   output $DELL_MONITOR enable
-  exec nmcli r wifi off
 }
 
 profile {

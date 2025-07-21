@@ -43,7 +43,7 @@ set $ws10 "10"
 # assigning windows to workspaces
 assign [app_id="foot"] $ws1
 assign [app_id="firefox"] $ws2
-assign [class="FreeTube"] $ws3
+assign [app_id="FreeTube"] $ws3
 assign [class="Jellyfin Media Player"] $ws3
 assign [class="Moonlight"] $ws4
 assign [class="discord"] $ws5
@@ -84,17 +84,17 @@ for_window [shell="xwayland"] title_format "%title (X11)"
 #for_window [app_id="foot"] opacity 0.9
 
 # set inactive transparency - LAG
-exec /usr/share/sway-contrib/inactive-windows-transparency.py -f 1.0 -o 0.95
+exec /usr/share/sway-contrib/inactive-windows-transparency.py -f 1.0 -o 0.95 -g
 
 ### MY STARTUP COMMANDS ###
-# start terminal
+# start terminal server
 exec_always foot -s
 
 # set background
 exec_always swaybg --image $background --mode fill
 
 # set night light screen tint
-exec gammastep -l 53.631611:-113.323975 -t 6500K:4500K -b 1.0:0.8
+exec "gammastep -l 53.631611:-113.323975 -t 6500K:4500K -b 1.0:0.8"
 
 # display switcher for docking laptop
 exec kanshi
