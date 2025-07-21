@@ -5,6 +5,7 @@
 .config/i3status/config
 .config/kanshi/config
 .config/sway/config
-.config/wm/universal.conf
+.config/wm/after.conf
+.config/wm/before.conf
 .config/nvim/init.vim
 .xinitrc
