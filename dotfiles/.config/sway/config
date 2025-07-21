@@ -17,10 +17,18 @@ input type:touchpad {
   dwtp disabled
   events enabled
 }
+input type:pointer {
+  accel_profile adaptive
+  pointer_accel 0
+}
+input type:keyboard {
+  xkb_options shift:both_capslock
+  xkb_options caps:none
+}
 
-output eDP-1 max_render_time off allow_tearing false adaptive_sync on mode 1920x1080@60Hz enable
-output DP-2 adaptive_sync on pos 0 50 max_render_time 2 mode 1920x1080@75Hz disable
-output DP-3 transform 270 pos 1920 0 max_render_time 3 mode 1920x1080@60Hz disable
+output eDP-1 max_render_time off allow_tearing false
+output 'LG Electronics LG FULL HD 0x00072B2C' adaptive_sync on max_render_time 2
+output 'Dell Inc. DELL U2417H XVNNT86RB40W' transform 270 max_render_time 3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -128,3 +136,5 @@ exec_always swaybg --image $background --mode fill
 
 # set night light screen tint REPLACE
 exec gammastep -l  53.631611:-113.323975 -t 6500K:4500K -b 1.0:0.8
+
+exec kanshi

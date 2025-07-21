@@ -1,0 +1,28 @@
+output 'LG Electronics LG FULL HD 0x00072B2C' {
+  position 0,75
+  mode 1920x1080@75Hz
+  alias $LG_MONITOR
+}
+output 'Dell Inc. DELL U2417H XVNNT86RB40W' {
+  position 1920,0
+  mode 1920x1080@60Hz
+  alias $DELL_MONITOR
+}
+
+output 'AU Optronics 0x133D Unknown' {
+  position 0,0
+  mode 1920x1080@60Hz
+  alias $LAPTOP
+}
+
+profile {
+  output $LAPTOP disable
+  output $LG_MONITOR enable
+  output $DELL_MONITOR enable
+  exec nmcli r wifi off
+}
+
+profile {
+  output $LAPTOP enable
+  exec nmcli r wifi on
+}

@@ -36,17 +36,3 @@ undock_i3() {
   nmcli r wifi on
   autorandr --change mobile
 }
-
-dock_sway() {
-  sway output DP-2 enable
-  sway output DP-3 enable
-  sway output eDP-1 disable
-  nmcli r wifi off
-}
-
-undock_sway() {
-  sway output DP-2 disable
-  sway output DP-3 disable
-  sway output eDP-1 enable
-  nmcli r wifi on
-}
