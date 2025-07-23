@@ -13,9 +13,10 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.3.0/bin"
 
 alias vim="nvim -p"
 alias yay="paru"
+alias ssh="TERM=xterm-256color ssh"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+export PATH="$HOME/.bin:$HOME/gems/bin:$PATH"
 
 PROMPT_COMMAND='
   PS1_branch=""
